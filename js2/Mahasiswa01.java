@@ -16,8 +16,8 @@ public class Mahasiswa01 {
     }
 
     void updateIpk(double ipkBaru) {
-        if (0.0 >= ipk && ipk <= 4.0) {
         ipk = ipkBaru;
+        if (ipk >= 0.0 && ipk <= 4.0) {
         } else {
             System.out.println("IPK harus berada dalam rentang 0 hingga 4");
         }
@@ -34,5 +34,13 @@ public class Mahasiswa01 {
             return "Kinerja Kurang";
         }
     }
-
+    public Mahasiswa01() {
+    }
+    
+    public Mahasiswa01(String nm, String nim, double ipk, String kls) {
+        nama = nm;
+        this.nim = nim;
+        this.ipk = ipk;
+        kelas = kls;
+    }
 }
