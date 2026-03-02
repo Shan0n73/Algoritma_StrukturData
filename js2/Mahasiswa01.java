@@ -17,11 +17,10 @@ public class Mahasiswa01 {
     }
 
     void updateIpk(double ipkBaru) {
-        ipk = ipkBaru;
         if (0.0 <= ipk && ipk <= 4.0) {
-            System.out.println("IPK valid");
+        ipk = ipkBaru;
         } else {
-            System.out.println("IPK tidak valid");
+            System.out.println("IPK harus berada dalam rentang 0 hingga 4");
         }
     }
 
