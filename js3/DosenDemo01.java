@@ -27,7 +27,6 @@ public class DosenDemo01 {
         }
         int i = 1;
         for (Dosen01 dosen : arrayOfDosen01) {
-            System.out.println("------------------------------");
             System.out.println("Data Dosen ke-" + (i) + "\t: ");
             System.out.println("KODE\t\t\t\t: " + dosen.kode);
             System.out.println("NAMA\t\t\t\t: " + dosen.nama);
@@ -36,6 +35,13 @@ public class DosenDemo01 {
             System.out.println("JENIS KELAMIN\t\t\t: " + tampilJK);
             System.out.println("USIA\t\t\t\t: " + dosen.usia);
             i++;
+            System.out.println("------------------------------");
         }
+        DataDosen01 dataStats = new DataDosen01();
+        dataStats.dataSemuaDosen(arrayOfDosen01);
+        dataStats.jumlahDosenPerJenisKelamin(arrayOfDosen01);
+        dataStats.rerataUsiaDosenPerJenisKelamin(arrayOfDosen01);
+        dataStats.infoDosenPalingMuda(arrayOfDosen01);
+        dataStats.infoDosenPalingTua(arrayOfDosen01);
     }
 }
