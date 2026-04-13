@@ -1,8 +1,12 @@
 package js6;
 
 public class MahasiswaBerprestasi01 {
-    Mahasiswa01 [] listMhs = new Mahasiswa01[5];
-    int idx; 
+    Mahasiswa01 [] listMhs;
+    int idx;
+
+    MahasiswaBerprestasi01(int jml){
+        listMhs = new Mahasiswa01[jml];
+    }
 
     void tambah(Mahasiswa01 m) {
         if (idx < listMhs.length) {
@@ -15,20 +19,24 @@ public class MahasiswaBerprestasi01 {
 
     void tampil(){
         for (Mahasiswa01 m : listMhs) {
+            if (m != null) {
             m.tampilInformasi();
+            }
             System.out.println("-------------------");
         }
     }
 
-    void bubbleSort() {
+    void selectionSort() {
         for (int i = 0; i < listMhs.length - 1; i++) {
-            for (int j = 1; j < listMhs.length - i; j++) {
-                if (listMhs[j].ipk > listMhs[j-1].ipk) {
-                    Mahasiswa01 tmp = listMhs[j];
-                    listMhs[j] = listMhs[j-1];
-                    listMhs[j-1] = tmp;
+            int idxMin = i;
+            for (int j = i + 1; j < listMhs.length; j++) {
+                if (listMhs[j].ipk < listMhs[idxMin].ipk) {
+                    idxMin = j;
                 }
             }
+            Mahasiswa01 tmp = listMhs[idxMin];
+            listMhs[idxMin] = listMhs[i];
+            listMhs[i] = tmp;
         }
     }
     
