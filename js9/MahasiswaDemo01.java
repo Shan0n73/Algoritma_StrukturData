@@ -3,6 +3,7 @@ package js9;
 import java.util.Scanner;
 
 public class MahasiswaDemo01 {
+
     public static void main(String[] args) {
         StackTugasMahasiswa01 stack = new StackTugasMahasiswa01(5);
         Scanner sc = new Scanner(System.in);
@@ -40,6 +41,8 @@ public class MahasiswaDemo01 {
                         int nilai = sc.nextInt();
                         dinilai.tugasDinilai(nilai);
                         System.out.printf("Nilai Tugas %s adalah %d\n", dinilai.nama, nilai);
+                        String biner = stack.konversiDesimalKeBiner(nilai);
+                        System.out.println("Nilai Biner Tugas: " + biner);
                     }
                     break;
                 case 3:
@@ -62,7 +65,7 @@ public class MahasiswaDemo01 {
                     break;
                 default:
                     System.out.println("Pilihan tidak valid!");
-            } 
+            }
         } while (pilih != 0);
     }
 }

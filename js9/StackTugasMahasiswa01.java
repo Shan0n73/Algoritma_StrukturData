@@ -1,7 +1,8 @@
 package js9;
 
 public class StackTugasMahasiswa01 {
-   Mahasiswa01[] stack;
+
+    Mahasiswa01[] stack;
     int top;
     int size;
 
@@ -12,12 +13,12 @@ public class StackTugasMahasiswa01 {
     }
 
     public boolean isFull() {
-        if (top == size -1) {
+        if (top == size - 1) {
             return true;
         } else {
             return false;
         }
-    }    
+    }
 
     public boolean isEmpty() {
         if (top == -1) {
@@ -73,5 +74,19 @@ public class StackTugasMahasiswa01 {
             System.out.println(stack[i].nama + "\t" + stack[i].nim + "\t" + stack[i].kelas);
         }
         System.out.println(" ");
+    }
+
+    public String konversiDesimalKeBiner(int nilai) {
+        StackKonversi01 stack = new StackKonversi01();
+        while (nilai > 0) {
+            int sisa = nilai % 2;
+            stack.push(sisa);
+            nilai = nilai / 2;
+        }
+        String biner = new String();
+        while (!stack.isEmpty()) {
+            biner += stack.pop();
+        }
+        return biner;
     }
 }
