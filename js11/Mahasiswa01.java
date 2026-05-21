@@ -10,14 +10,13 @@ public class Mahasiswa01 {
     public Mahasiswa01() {
     }
 
-    public Mahasiswa01(String nm, String name, String kls, double ip) {
+    public Mahasiswa01(String nm, String name, String kls) {
         nim = nm;
         nama = name;
         kelas = kls;
-        ipk = ip;
     }
 
     public void tampilInformasi() {
-        System.out.println(nim + "\t\t" + nama + "\t\t" + kelas + "\t\t" + ipk);
+        System.out.println(nim + "\t\t" + nama + "\t\t" + kelas);
     }
 }
