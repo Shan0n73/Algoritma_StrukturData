@@ -7,30 +7,25 @@ public class SLLMain01 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         SLL01 sll = new SLL01();
-        char pilih;
+        Mahasiswa01 mhs = new Mahasiswa01("2197", "Arif", "TI-1C", 3.4);
+        Mahasiswa01 mhs2 = new Mahasiswa01("2194", "Bimon", "TI-1B", 3.9);
+        Mahasiswa01 mhs3 = new Mahasiswa01("2192", "Caca", "TI-1A", 3.6);
 
-        do {
-            System.out.println("--- Input Data Mahasiswa ---");
-            System.out.print("Nama    : ");
-            String nama = sc.nextLine();
-            System.out.print("NIM     : ");
-            String nim = sc.nextLine();
-            System.out.print("Kelas   : ");
-            String kelas = sc.nextLine();
-            System.out.print("IPK     : ");
-            double ipk = sc.nextDouble();
-            sc.nextLine();
+        sll.addFirst(mhs);
+        sll.addLast(mhs2);
+        sll.addLast(mhs3);
+        sll.print();
 
-            Mahasiswa01 mhs = new Mahasiswa01(nama, nim, kelas, ipk);
-            sll.addLast(mhs);
+        System.out.println("data index 1 : ");
+        sll.getData(1);
 
-            System.out.print("Tambah data lagi? (y/n): ");
-            pilih = sc.next().charAt(0);
-            sc.nextLine();
-            System.out.println("");
+        System.out.println("data mahasiswa an Bimon berada pada index : " + sll.indexOf("Bimon"));
+        System.out.println();
 
-        } while (pilih == 'y' || pilih == 'Y');
-
+        sll.removeFirst();
+        sll.removeLast();
+        sll.print();
+        sll.removeAt(0);
         sll.print();
 
     }
