@@ -103,7 +103,8 @@ public class DLL01 {
             System.out.println("Linked List kosong.");
             return;
         }
-
+        System.out.println("Data berikut berhasil dihapus dari awal:");
+        head.data.tampil();
         if (head == tail) {
             head = tail = null;
         } else {
@@ -117,7 +118,8 @@ public class DLL01 {
             System.out.println("Linked List kosong.");
             return;
         }
-
+        System.out.println("Data berikut berhasil dihapus dari akhir:");
+        tail.data.tampil();
         if (head == tail) {
             head = tail = null;
         } else {
@@ -138,7 +140,7 @@ public class DLL01 {
             current = current.next;
         }
     }
-<<<<<<< HEAD
+
     public void printReverse() {
         if (isEmpty()) {
             System.out.println("Linked List masih kosong.");
@@ -150,6 +152,4 @@ public class DLL01 {
             current = current.prev;
         }
     }
-=======
->>>>>>> a740cad3ccc0e4bd07a5a1e3adad4cf580567205
 }
